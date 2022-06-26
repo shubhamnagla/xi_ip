@@ -1,0 +1,9 @@
+<?xml version='1.0' ?>
+<launch>
+
+  <!-- include another launch file -->
+  <include file="$(find-pkg-share xi_ip)/launch/turtlebot3.launch.py"/>
+  <include file="$(find-pkg-share xi_ip)/launch/rviz.launch.py"/>
+  <include file="$(find-pkg-share xi_ip)/launch/filter_node.launch.py"/>	
+  
+</launch>
