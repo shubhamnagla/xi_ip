@@ -22,7 +22,7 @@ class ImageSubscriber : public rclcpp::Node
         cv_bridge::CvImagePtr cv_ptr;
     	try
     	{
-    	  cv_ptr = cv_bridge::toCvCopy(msg, msg->encoding);
+    	  cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
     	 }
     	catch (cv_bridge::Exception& e)
     	{
@@ -38,8 +38,8 @@ class ImageSubscriber : public rclcpp::Node
     	 filter2D(image, img, -100 , kernel, cv::Point(-1,-1), 0, 4);
     	 cv::Mat rs_og;
     	 cv::Mat rs_bl;
-        cv::resize(cv_ptr->image, rs_og, cv::Size(800,800), cv::INTER_LINEAR);
-        cv::resize(img, rs_bl, cv::Size(800,800), cv::INTER_LINEAR); 
+        cv::resize(cv_ptr->image, rs_og, cv::Size(900,800), cv::INTER_LINEAR);
+        cv::resize(img, rs_bl, cv::Size(900,800), cv::INTER_LINEAR); 
         cv::imshow(OPENCV_WINDOW, rs_bl);
         cv::imshow(OPENCV_WINDOW2, rs_og);
         cv::waitKey(3);
