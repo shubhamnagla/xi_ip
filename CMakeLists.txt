@@ -24,12 +24,10 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 
-install(DIRECTORY 
-	include
+install(DIRECTORY
         launch 
         rviz 
         scripts
-        src
         gazebo
         DESTINATION share/${PROJECT_NAME})
 
