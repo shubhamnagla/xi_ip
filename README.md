@@ -14,12 +14,16 @@ $ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 $ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 $ cd ~/xi_ws
 $ colcon build --symlink-install
+$ rosdep update
+Ignore if you receive any error for the following
+$ rosdep install -i --from-path src --rosdistro foxy -y
 ```
 
 > For launching the whole simulation and task 
 ```bash
 $ cd ~/xi_ws
 $ . install/setup.bash
+$ export TURTLEBOT3_MODEL=waffle
 $ ros2 launch xi_ip xi_ip.launch.xml
 ```
 > Gazebo
